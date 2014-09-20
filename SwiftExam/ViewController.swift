@@ -40,9 +40,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        cell.textLabel?.text = self.strings[indexPath.row]
-        return cell
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as UITableViewCell;
+        cell.textLabel?.text = self.strings[indexPath.row];
+        cell.textLabel?.textColor = UIColor.whiteColor();
+        return cell;
     }
 }
 
