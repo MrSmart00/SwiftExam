@@ -33,7 +33,7 @@ class Synchronize {
     func asyncCreateList(completion: (list:[String]) -> Void) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             var msgs:[String] = [];
-            for i in 0...10 {
+            for i in 0...100 {
                 msgs.append("++ " + String(i));
             }
             completion (list: msgs);

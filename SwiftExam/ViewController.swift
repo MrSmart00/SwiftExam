@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var table:UITableView!;
+    private var strings:[String] = [];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +21,8 @@ class ViewController: UIViewController {
         })
         
         Synchronize.sharedInstance.asyncCreateList { (list) -> Void in
-            println("*** \(list)");
+            self.strings = list;
+            self.table.reloadData();
         }
     }
 
@@ -29,6 +33,16 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         println("viewDidAppear!");
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return strings.count;
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        cell.textLabel?.text = self.strings[indexPath.row]
+        return cell
     }
 }
 
