@@ -13,6 +13,8 @@
 		454E26D519CDCABC005DCEDB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454E26D419CDCABC005DCEDB /* Images.xcassets */; };
 		454E26D819CDCABC005DCEDB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454E26D619CDCABC005DCEDB /* LaunchScreen.xib */; };
 		454E26E419CDCABC005DCEDB /* SwiftExamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E26E319CDCABC005DCEDB /* SwiftExamTests.swift */; };
+		454E26F519CDCEE9005DCEDB /* Synchronize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E26F419CDCEE9005DCEDB /* Synchronize.swift */; };
+		454E26F619CDCEE9005DCEDB /* Synchronize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E26F419CDCEE9005DCEDB /* Synchronize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		454E26DD19CDCABC005DCEDB /* SwiftExamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftExamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454E26E219CDCABC005DCEDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		454E26E319CDCABC005DCEDB /* SwiftExamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExamTests.swift; sourceTree = "<group>"; };
+		454E26F419CDCEE9005DCEDB /* Synchronize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Synchronize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 		454E26CA19CDCABC005DCEDB /* SwiftExam */ = {
 			isa = PBXGroup;
 			children = (
+				454E26ED19CDCBCA005DCEDB /* Classes */,
 				454E26CD19CDCABC005DCEDB /* AppDelegate.swift */,
 				454E26CF19CDCABC005DCEDB /* ViewController.swift */,
 				454E26D119CDCABC005DCEDB /* Main.storyboard */,
@@ -110,6 +114,14 @@
 				454E26E219CDCABC005DCEDB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		454E26ED19CDCBCA005DCEDB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				454E26F419CDCEE9005DCEDB /* Synchronize.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				454E26D019CDCABC005DCEDB /* ViewController.swift in Sources */,
+				454E26F519CDCEE9005DCEDB /* Synchronize.swift in Sources */,
 				454E26CE19CDCABC005DCEDB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454E26F619CDCEE9005DCEDB /* Synchronize.swift in Sources */,
 				454E26E419CDCABC005DCEDB /* SwiftExamTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +419,7 @@
 				454E26E919CDCABC005DCEDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		454E26EA19CDCABC005DCEDB /* Build configuration list for PBXNativeTarget "SwiftExamTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +428,7 @@
 				454E26EC19CDCABC005DCEDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

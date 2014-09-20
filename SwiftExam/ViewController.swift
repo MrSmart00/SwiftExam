@@ -12,7 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        Synchronize.sharedInstance.asyncPrint(5, completion: { () -> Void in
+            println("FINISH!!");
+        })
+        
+        Synchronize.sharedInstance.asyncCreateList { (list) -> Void in
+            println("*** \(list)");
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +27,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func viewDidAppear(animated: Bool) {
+        println("viewDidAppear!");
+    }
 }
 
