@@ -32,7 +32,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     override func viewDidAppear(animated: Bool) {
-        println("viewDidAppear!");
+        let network: Network = Network();
+        network.connect("http://localhost/", completion: { (list) -> Void in
+            for (var i:Int = 0; i < list.count; i++) {
+                println(list[i]);
+            }
+        })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
