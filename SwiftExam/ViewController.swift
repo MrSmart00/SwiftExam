@@ -32,7 +32,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     override func viewDidAppear(animated: Bool) {
-        println("viewDidAppear!");
+        let network: Network = Network();
+        network.connect("http://localhost/", completion: { (list) -> Void in
+            for (var i:Int = 0; i < list.count; i++) {
+                println(list[i]);
+            }
+        })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,9 +45,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        cell.textLabel?.text = self.strings[indexPath.row]
-        return cell
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as UITableViewCell;
+        cell.textLabel?.text = self.strings[indexPath.row];
+        cell.textLabel?.textColor = UIColor.whiteColor();
+        return cell;
     }
 }
 
